@@ -1,7 +1,6 @@
-﻿using _3d_shooter.Character.Input;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _3d_shooter.Character
+namespace _3d_shooter.Character.Input
 {
     public class PlayerMove
     {
