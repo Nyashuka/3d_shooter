@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class BootstrapInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 }
