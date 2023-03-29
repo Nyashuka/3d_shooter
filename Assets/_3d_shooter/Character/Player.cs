@@ -1,7 +1,5 @@
 using _3d_shooter.Character.Input;
-using Character;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace _3d_shooter.Character
 {
@@ -10,16 +8,17 @@ namespace _3d_shooter.Character
     {
         [SerializeField] private CharacterController _controller;
         [SerializeField] private int _speed;
-        private PlayerMove _playerMove;
+        [SerializeField] private int _jumpHeight;
+        private CharacterMovement _characterMovement;
+        
         private void Start()
         {
-            _playerMove = new PlayerMove(_speed, new PCUserInput(), _controller);
+            _characterMovement = new CharacterMovement(_speed, _jumpHeight, _controller);
         }
 
         private void Update()
         {
-            _playerMove.Move();
+            _characterMovement.OnUpdate();
         }
-        
     }
 }
